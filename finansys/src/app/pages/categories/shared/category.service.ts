@@ -1,15 +1,15 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
-import { Observable, throwError } from "rxjs";
-import { map, catchError, flatMap } from "rxjs/operators";
-import { Category } from "./category.model";
+import { Observable, throwError } from 'rxjs';
+import { map, catchError, flatMap } from 'rxjs/operators';
+import { Category } from './category.model';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class CategoryService {
-  private apiPath: string = "api/categories";
+  private apiPath: string = 'api/categories';
 
   constructor(private http: HttpClient) {}
 
@@ -22,9 +22,7 @@ export class CategoryService {
   getById(id: number): Observable<Category> {
     const url = `${this.apiPath}/${id}`;
 
-    return this.http
-      .get(url)
-      .pipe(catchError(this.handleError), map(this.jsonDataToCategory));
+    return this.http.get(url).pipe(catchError(this.handleError), map(this.jsonDataToCategory));
   }
 
   create(category: Category): Observable<Category> {
@@ -54,7 +52,7 @@ export class CategoryService {
   private jsonDataToCategories(jsonData: any[]): Category[] {
     const categories: Category[] = [];
 
-    jsonData.forEach((element) => categories.push(element));
+    jsonData.forEach(element => categories.push(element));
 
     return categories;
   }
@@ -64,7 +62,7 @@ export class CategoryService {
   }
 
   private handleError(error: any): Observable<any> {
-    console.log("Erro request: ", error);
+    console.log('Erro request: ', error);
 
     return throwError(error);
   }
