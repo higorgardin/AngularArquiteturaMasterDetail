@@ -118,7 +118,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
       this.serverErrorMessages = JSON.parse(error._body).errors;
     } else {
       this.serverErrorMessages = [
-        'Falha na comunicação com o servidor, pro favor tente mais tarde',
+        'Falha na comunicação com o servidor, por favor tente mais tarde',
       ];
     }
   }
