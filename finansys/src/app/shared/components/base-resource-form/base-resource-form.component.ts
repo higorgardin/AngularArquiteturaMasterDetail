@@ -73,7 +73,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
     if (this.currentAction === 'new') {
       this.pageTitle = this.creationPageTitle();
     } else {
-      this.pageTitle = this.editionnPageTitle();
+      this.pageTitle = this.editionPageTitle();
     }
   }
 
@@ -81,7 +81,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
     return 'Novo';
   }
 
-  protected editionnPageTitle(): string {
+  protected editionPageTitle(): string {
     return 'Editando';
   }
 
