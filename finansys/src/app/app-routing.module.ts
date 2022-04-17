@@ -10,6 +10,12 @@ const routes: Routes = [
     path: 'categories',
     loadChildren: './pages/categories/categories.module#CategoriesModule',
   },
+  {
+    path: 'reports',
+    loadChildren: './pages/reports/reports.module#ReportsModule',
+  },
+
+  { path: '', redirectTo: '/reports', pathMatch: 'full' },
 ];
 
 @NgModule({
