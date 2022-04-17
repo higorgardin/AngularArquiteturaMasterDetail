@@ -10,31 +10,32 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:class": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:component": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:directive": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:guard": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:module": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "spec": false
+          "skipTests": true
         },
         "@schematics/angular:service": {
-          "spec": false
+          "skipTests": true
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/finansys",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -46,7 +47,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/toastr/build/toastr.min.css",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
@@ -77,6 +78,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -147,5 +152,8 @@
       }
     }
   },
-  "defaultProject": "finansys"
+  "defaultProject": "finansys",
+  "cli": {
+    "analytics": "976494c3-4d16-4e32-b7bc-4e09dc7b7440"
+  }
 }
